@@ -50,3 +50,7 @@ Route::get('/food/create', 'FoodController@create');
 Route::get('/food/edit/{id}', 'FoodController@edit');
 // tạo ra 1 biến trên url bằng cú pháp {}
 Route::get('/food/delete/{id}', 'FoodController@delete');
+
+
+// tạo router mới
+Route::get('/demo5', 'FoodController@demo5');

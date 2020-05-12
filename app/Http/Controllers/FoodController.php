@@ -12,25 +12,29 @@ class FoodController extends Controller
      * Hiện thị các thực đơn dưới dạng bảng
      */
     public function index() {
-        echo '<br>' . __METHOD__;
-
+        // coi folder /resources/views làm folder gốc của phần view
+        return view('foodbackend.index');
     }
 
     /**
      * trả về view tạo ra thực đơn mới
      */
     public function create() {
-        echo '<br>' . __METHOD__;
+        return view('foodbackend.create');
 
     }
 
     public function edit() {
-        echo '<br>' . __METHOD__;
-
+        return view('foodbackend.edit');
     }
 
     public function delete() {
-        echo '<br>' . __METHOD__;
+        return view('foodbackend.delete');
 
+    }
+
+
+    public function demo5() {
+        echo '<br>' . __METHOD__;
     }
 }
