@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\MenusModel;
 use Illuminate\Http\Request;
 
 class FoodController extends Controller
@@ -12,6 +13,13 @@ class FoodController extends Controller
      * Hiện thị các thực đơn dưới dạng bảng
      */
     public function index() {
+
+        // gọi model đế lây dữ liệu
+        $menus = MenusModel::all();
+        // debug
+        dump($menus);
+
+
         // coi folder /resources/views làm folder gốc của phần view
         return view('foodbackend.index');
     }
