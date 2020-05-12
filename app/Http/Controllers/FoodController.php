@@ -20,8 +20,13 @@ class FoodController extends Controller
         dump($menus);
 
 
+        $dataView = [];
+        $dataView['foods'] = $menus;
+        $dataView['abc'] = 1;
+        $dataView['def'] = 5;
+
         // coi folder /resources/views làm folder gốc của phần view
-        return view('foodbackend.index');
+        return view('foodbackend.index', $dataView);
     }
 
     /**

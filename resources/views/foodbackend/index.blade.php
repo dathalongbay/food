@@ -19,6 +19,11 @@
     <h2>Quản lý sản phẩm</h2>
     <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>
     <table class="table">
+
+        {{ $foods }}
+        {{ $abc }}
+        {{ $def }}
+
         <thead>
         <tr>
             <th>Tên</th>
@@ -28,21 +33,15 @@
         </tr>
         </thead>
         <tbody>
+        @foreach($foods as $foodItem)
         <tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
+            <td>{{ $foodItem->food_name }}</td>
+            <td>{{ $foodItem->food_image }}</td>
+            <td>{{ $foodItem->food_price }}</td>
+            <td></td>
         </tr>
-        <tr>
-            <td>Mary</td>
-            <td>Moe</td>
-            <td>mary@example.com</td>
-        </tr>
-        <tr>
-            <td>July</td>
-            <td>Dooley</td>
-            <td>july@example.com</td>
-        </tr>
+        @endforeach
+
         </tbody>
     </table>
 </div>
