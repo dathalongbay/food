@@ -18,14 +18,12 @@
 <div class="container">
     <h2>Quản lý sản phẩm</h2>
     <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>
+    <p><a href="{{ url('/food/create') }}" class="btn btn-info">Thêm sản phẩm</a> </p>
     <table class="table">
-
-        {{ $foods }}
-        {{ $abc }}
-        {{ $def }}
 
         <thead>
         <tr>
+            <th>ID</th>
             <th>Tên</th>
             <th>Hình ảnh</th>
             <th>Giá</th>
@@ -35,10 +33,14 @@
         <tbody>
         @foreach($foods as $foodItem)
         <tr>
+            <td>{{ $foodItem->id }}</td>
             <td>{{ $foodItem->food_name }}</td>
             <td>{{ $foodItem->food_image }}</td>
             <td>{{ $foodItem->food_price }}</td>
-            <td></td>
+            <td>
+                <a href="{{ url('/food/edit').'/'.$foodItem->id }}" class="btn btn-warning">Sửa</a>
+                <a href="{{ url('/food/delete/').'/'.$foodItem->id }}" class="btn btn-danger">Xóa</a>
+            </td>
         </tr>
         @endforeach
 
