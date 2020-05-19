@@ -39,7 +39,28 @@ class FoodController extends Controller
     /*
      * lưu dữ liệu cho bản ghi mới
      */
-    public function store() {
+    public function store(Request $request) {
+
+        dump($_POST);
+
+        $food_name = $request->input('food_name', '');
+        $food_intro = $request->input('food_intro', '');
+        $food_image = $request->input('food_image', '');
+        $food_price = $request->input('food_price', '');
+        $food_stock = $request->input('food_stock', '');
+
+        // khởi tạo model ORM
+        $menuModel = new MenusModel();
+
+        $menuModel->food_name = $food_name;
+        $menuModel->food_intro = $food_intro;
+        $menuModel->food_image = $food_image;
+        $menuModel->food_price = $food_price;
+        $menuModel->food_stock = $food_stock;
+
+        // lưu dữ liệu vào db
+        $menuModel->save();
+
         echo '<br>' . __METHOD__;
         die;
     }
