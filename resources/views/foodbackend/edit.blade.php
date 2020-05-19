@@ -19,25 +19,40 @@
     <h1>Sửa món ăn</h1>
 
     <div class="row">
-        <form name="edit" method="post" action="{{ url('/food/edit/1') }}">
+        <div class="col-md-12">
+            <form name="edit" method="post" action="{{ url('/food/edit/1') }}">
 
-            @csrf
+                @csrf
 
-            <div class="form-group">
-                <label for="email">Email address:</label>
-                <input type="email" class="form-control" placeholder="Enter email" id="email">
-            </div>
-            <div class="form-group">
-                <label for="pwd">Password:</label>
-                <input type="password" class="form-control" placeholder="Enter password" id="pwd">
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox"> Remember me
-                </label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+                <div class="form-group">
+                    <label>Tên đồ ăn:</label>
+                    <input type="text" name="food_name" class="form-control" placeholder="Nhập tên món ăn">
+                </div>
+
+                <div class="form-group">
+                    <label>Giới thiệu :</label>
+                    <textarea name="food_intro" class="form-control" style="width: 100%"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Hình ảnh:</label>
+                    <input type="text" name="food_image" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Giá tiền:</label>
+                    <input type="number" name="food_price" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Tồn kho:</label>
+                    <input type="number" name="food_stock" class="form-control">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Sửa sản phẩm</button>
+            </form>
+        </div>
+
     </div>
 </div>
 </body>

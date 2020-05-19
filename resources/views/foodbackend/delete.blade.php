@@ -19,25 +19,20 @@
     <h1>Xóa món ăn</h1>
 
     <div class="row">
-        <form name="delete" method="post" action="{{ url('/food/delete/1') }}">
+        <div class="col-md-12">
+            <form name="delete" method="post" action="{{ url('/food/delete/1') }}">
 
-            @csrf
+                @csrf
 
-            <div class="form-group">
-                <label for="email">Email address:</label>
-                <input type="email" class="form-control" placeholder="Enter email" id="email">
-            </div>
-            <div class="form-group">
-                <label for="pwd">Password:</label>
-                <input type="password" class="form-control" placeholder="Enter password" id="pwd">
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox"> Remember me
-                </label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+                <div class="form-group">
+                    <label for="email">Tên món ăn:</label>
+                    Kèm xoài
+                </div>
+
+                <button type="submit" class="btn btn-danger">Xóa</button>
+            </form>
+        </div>
+
     </div>
 </div>
 </body>
