@@ -67,8 +67,30 @@ class FoodController extends Controller
 
     /**
      * cập nhật dữ liệu cho bản ghi mới
+     * tham số đầu tiên là đối $request lấy ra tất cả dữ liệu của form
+     * $id chính là id của bản ghi đang muốn sửa được truyền từ router web.php xuống controller
      */
-    public function update() {
+    public function update(Request $request, $id) {
+
+        dump($id);
+        dump($_POST);
+
+        $menuModel = MenusModel::find($id);
+
+        $food_name = $request->input('food_name', '');
+        $food_intro = $request->input('food_intro', '');
+        $food_image = $request->input('food_image', '');
+        $food_price = $request->input('food_price', '');
+        $food_stock = $request->input('food_stock', '');
+
+        // đè dữ liệu vào bản ghi hiện tại
+        $menuModel->food_name = $food_name;
+        $menuModel->food_intro = $food_intro;
+        $menuModel->food_image = $food_image;
+        $menuModel->food_price = $food_price;
+        $menuModel->food_stock = $food_stock;
+
+        $menuModel->save();
         echo '<br>' . __METHOD__;
         die;
     }

@@ -20,7 +20,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <form name="edit" method="post" action="{{ url('/food/edit/1') }}">
+            <form name="edit" method="post" action="{{ url('/food/edit/'.$food->id) }}">
 
                 @csrf
                 <br> dữ liệu ở view
