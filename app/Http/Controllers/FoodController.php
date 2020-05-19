@@ -82,7 +82,15 @@ class FoodController extends Controller
         die;
     }
 
-    public function edit() {
+    public function edit($id) {
+
+        dump($id);
+
+        // lây ra bản ghi có id tương ứng
+        $menu = MenusModel::find($id);
+
+        dump($menu);
+
         return view('foodbackend.edit');
     }
 
