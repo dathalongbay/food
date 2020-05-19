@@ -23,30 +23,32 @@
             <form name="edit" method="post" action="{{ url('/food/edit/1') }}">
 
                 @csrf
+                <br> dữ liệu ở view
+                {{ dump($food) }}
 
                 <div class="form-group">
                     <label>Tên đồ ăn:</label>
-                    <input type="text" name="food_name" class="form-control" placeholder="Nhập tên món ăn">
+                    <input type="text" name="food_name" class="form-control" placeholder="Nhập tên món ăn" value="{{ $food->food_name }}">
                 </div>
 
                 <div class="form-group">
                     <label>Giới thiệu :</label>
-                    <textarea name="food_intro" class="form-control" style="width: 100%"></textarea>
+                    <textarea name="food_intro" class="form-control" style="width: 100%">{{ $food->food_intro }}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label>Hình ảnh:</label>
-                    <input type="text" name="food_image" class="form-control">
+                    <input type="text" name="food_image" class="form-control" value="{{ $food->food_image }}">
                 </div>
 
                 <div class="form-group">
-                    <label>Giá tiền:</label>
-                    <input type="number" name="food_price" class="form-control">
+                    <label>Giá tiền:
+                    <input type="number" name="food_price" class="form-control" value="{{ $food->food_price }}">
                 </div>
 
                 <div class="form-group">
                     <label>Tồn kho:</label>
-                    <input type="number" name="food_stock" class="form-control">
+                    <input type="number" name="food_stock" class="form-control" value="{{ $food->food_stock }}">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Sửa sản phẩm</button>

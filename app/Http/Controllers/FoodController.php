@@ -91,7 +91,10 @@ class FoodController extends Controller
 
         dump($menu);
 
-        return view('foodbackend.edit');
+        $dataView = [];
+        $dataView['food'] = $menu;
+
+        return view('foodbackend.edit', $dataView);
     }
 
     public function delete() {
