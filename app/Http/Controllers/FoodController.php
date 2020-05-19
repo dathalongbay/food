@@ -34,7 +34,31 @@ class FoodController extends Controller
      */
     public function create() {
         return view('foodbackend.create');
+    }
 
+    /*
+     * lưu dữ liệu cho bản ghi mới
+     */
+    public function store() {
+        echo '<br>' . __METHOD__;
+        die;
+    }
+
+    /**
+     * cập nhật dữ liệu cho bản ghi mới
+     */
+    public function update() {
+        echo '<br>' . __METHOD__;
+        die;
+    }
+
+
+    /**
+     * Xóa dữ liệu trong CSDL
+     */
+    public function destroy() {
+        echo '<br>' . __METHOD__;
+        die;
     }
 
     public function edit() {

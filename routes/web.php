@@ -51,6 +51,13 @@ Route::get('/food/edit/{id}', 'FoodController@edit');
 // tạo ra 1 biến trên url bằng cú pháp {}
 Route::get('/food/delete/{id}', 'FoodController@delete');
 
+// tạo ra 3 router để xử lý dữ liệu
+// lưu bản ghi mới
+Route::post('/food/create', 'FoodController@store');
+// cập nhật dữ liệu
+Route::post('/food/edit/{id}', 'FoodController@update');
+// xóa dữ liệu
+Route::post('/food/delete/{id}', 'FoodController@destroy');
 
 // tạo router mới
 Route::get('/demo5', 'FoodController@demo5');

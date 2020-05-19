@@ -19,7 +19,10 @@
     <h1>Sửa món ăn</h1>
 
     <div class="row">
-        <form action="/action_page.php">
+        <form name="edit" method="post" action="{{ url('/food/edit/1') }}">
+
+            @csrf
+
             <div class="form-group">
                 <label for="email">Email address:</label>
                 <input type="email" class="form-control" placeholder="Enter email" id="email">
