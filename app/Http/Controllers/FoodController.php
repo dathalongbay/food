@@ -99,9 +99,12 @@ class FoodController extends Controller
     /**
      * Xóa dữ liệu trong CSDL
      */
-    public function destroy() {
-        echo '<br>' . __METHOD__;
-        die;
+    public function destroy($id) {
+
+        $menu = MenusModel::find($id);
+        $menu->delete();
+
+        return redirect('/food');
     }
 
     public function edit($id) {
@@ -119,8 +122,13 @@ class FoodController extends Controller
         return view('foodbackend.edit', $dataView);
     }
 
-    public function delete() {
-        return view('foodbackend.delete');
+    public function delete($id) {
+        $menu = MenusModel::find($id);
+
+        $dataView = [];
+        $dataView['food'] = $menu;
+
+        return view('foodbackend.delete', $dataView);
 
     }
 

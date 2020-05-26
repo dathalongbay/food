@@ -20,13 +20,12 @@
 
     <div class="row">
         <div class="col-md-12">
-            <form name="delete" method="post" action="{{ url('/food/delete/1') }}">
+            <form name="delete" method="post" action="{{ url('/food/delete/'.$food->id) }}">
 
                 @csrf
 
                 <div class="form-group">
-                    <label for="email">Tên món ăn:</label>
-                    Kèm xoài
+                    <label for="email">Tên món ăn: {{ $food->food_name }}</label>
                 </div>
 
                 <button type="submit" class="btn btn-danger">Xóa</button>
