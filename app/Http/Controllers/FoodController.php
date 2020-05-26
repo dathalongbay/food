@@ -61,8 +61,8 @@ class FoodController extends Controller
         // lưu dữ liệu vào db
         $menuModel->save();
 
-        echo '<br>' . __METHOD__;
-        die;
+        return redirect('/food');
+
     }
 
     /**
@@ -91,8 +91,9 @@ class FoodController extends Controller
         $menuModel->food_stock = $food_stock;
 
         $menuModel->save();
-        echo '<br>' . __METHOD__;
-        die;
+
+        return redirect('/food');
+
     }
 
 
